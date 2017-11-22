@@ -15,14 +15,17 @@ docker build --build-arg TARGET=release --build-arg BRANCH=logging_fix -t opense
 #### Run the package locally
 
 ```bash
-docker run -p 2020:2020 -e OS_HOST=<HOST IP> -e OS_PORT=2020 --rm=true -it openset_x64_rel
+docker run -p 8080:8080 -e OS_HOST=127.0.0.1 -e OS_PORT=8080 --rm=true -it openset_x64_rel
 ```
-
 Run the package as a daemon
 
 ```bash
-docker run -p 2020:2020 -e OS_HOST=<HOST IP> -e OS_PORT=2020 --rm=true -d openset_x64_rel
+docker run -p 8080:8080 -e OS_HOST=127.0.01 -e OS_PORT=8080 --rm=true -d openset_x64_rel
 ```
+
+- `OS_PORT` is the port on the host where OpenSet will answer.
+- `OS_HOST` is the host IP or hostname.
+- `PORT:PORT` maps the host port to a container port, to answer on port `80` you would map `80:8080`.
 
 ## Docker Hub
 
@@ -32,7 +35,7 @@ There is always and up-to-date release version of OpenSet in [Docker Hub](https:
 
 
 ```bash
-docker run -p 2020:2020 -e OS_HOST=<HOST IP> -e OS_PORT=2020 --rm=true -d opset/openset_x64_rel
+docker run -p 8080:8080 -e OS_HOST=127.0.0.1 -e OS_PORT=8080 --rm=true -d opset/openset_x64_rel
 ```
 
 ##### to get the container id (I use the names) -

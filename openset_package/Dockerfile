@@ -19,7 +19,7 @@ RUN /opt/openset/bin/build $TARGET $BRANCH
 FROM        opset/openset_running_env:0.1.0
 MAINTAINER  Seth Hamilton
 
-EXPOSE 2020
+EXPOSE 8080
 
 COPY ./res/31-openset.conf /etc/rsyslog.d/31-openset.conf
 COPY ./res/entrypoint_openset.sh /opt/openset/entrypoint_openset.sh
