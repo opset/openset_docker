@@ -10,6 +10,7 @@ ARG BRANCH
 
 COPY ./res/build.sh /opt/openset/bin/build
 
+RUN chmod +x ./opt/openset/bin/build
 RUN /opt/openset/bin/build $TARGET $BRANCH
 
 ####
