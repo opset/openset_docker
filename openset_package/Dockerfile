@@ -2,22 +2,23 @@
 #### first step in our multi-step build
 ####
 
-FROM        opset/openset_build_env:0.1.0 as build_env
+FROM        opset/openset_build_env:0.2.0 as build_env
 MAINTAINER  Seth Hamilton
 
 ARG TARGET
 ARG BRANCH
 
+RUN mkdir /opt/openset && mkdir /opt/openset/bin
 COPY ./res/build.sh /opt/openset/bin/build
 
-RUN chmod +x ./opt/openset/bin/build
+RUN chmod +x /opt/openset/bin/build
 RUN /opt/openset/bin/build $TARGET $BRANCH
 
 ####
 #### second step in our multi-step build
 ####
 
-FROM        opset/openset_running_env:0.1.0
+FROM        opset/openset_running_env:0.2.0
 MAINTAINER  Seth Hamilton
 
 EXPOSE 8080

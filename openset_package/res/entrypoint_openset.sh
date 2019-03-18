@@ -9,11 +9,11 @@ sleep 1s
 command_line="./opt/openset/openset"
 
 if [[ ! -z "$OS_HOST" ]]; then
-    command_line+=" --hostext ${OS_HOST}"
+    command_line+=" --os-host ${OS_HOST}"
 fi
 
 if [[ ! -z "$OS_PORT" ]]; then
-    command_line+=" --portext ${OS_PORT}"
+    command_line+=" --os-port ${OS_PORT}"
 fi
 
 if [[ ! -z "$OS_TEST" ]]; then

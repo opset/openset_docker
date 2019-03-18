@@ -26,7 +26,7 @@ git checkout $2
 
 mkdir cmake-build
 cd cmake-build
-cmake .. -DCMAKE_C_COMPILER=gcc-7 -DCMAKE_CXX_COMPILER=g++-7 -DCMAKE_BUILD_TYPE=$1
+cmake .. -DCMAKE_C_COMPILER=gcc-8 -DCMAKE_CXX_COMPILER=g++-8 -DCMAKE_BUILD_TYPE=$1
 make
 ctest -R openset-unit-test
 
